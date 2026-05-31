@@ -8,8 +8,9 @@ CHAT_ID = os.environ["TELEGRAM_CHAT_ID"]
 def send_message(text: str):
     url = f"https://api.telegram.org/bot{TOKEN}/sendMessage"
     resp = requests.post(url, json={"chat_id": CHAT_ID, "text": text})
+    print(f"HTTP {resp.status_code}: {resp.text}")
+    print(f"chat_id used (repr): {CHAT_ID!r}")
     resp.raise_for_status()
-    print(f"Sent: {resp.json()}")
 
 
 if __name__ == "__main__":
