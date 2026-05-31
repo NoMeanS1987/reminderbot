@@ -13,4 +13,4 @@ def send_message(text: str):
 
 
 if __name__ == "__main__":
-    send_message("⏰ Напоминание! Прошло 30 минут.")
+    send_message("Время модить!")
